@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+.ml-95 {
+  margin-left: 95px;
+}
+.ml-64 {
+  margin-left: 64px;
+}
+.ml-77 {
+  margin-left: 77px;
+}
+.ml-176 {
+  margin-left: 176px;
+}
+.elt {
+  width: 300px;
+}
+li {
+  list-style-type: none;
+  margin: 5px;
+}
+.w-300{
+    width: 300px;
+}
+.title{
+    margin: 0 auto;
+}
+.title h1{
+    margin-bottom: 30px;
+}
+.dojo_form{
+  display: flex;
+  flex-direction: column;
+}
+.w-210{
+  width: 210px;
+}

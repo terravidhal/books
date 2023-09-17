@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- linking a css Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Books</title>
+</head>
+<body>
+    <br>
+    <div class="container d-flex justify-content-around">
+        <div>
+            <h1 class="mt-5 mb-5">New Books</h1>
+            <form action="/create_book" method="POST">
+                <div class="form-group d-flex gap-5">
+                    <label for="title" class="w-210">Title:</label>
+                    <input type="form-text" class="form-control border-secondary" name="title" id="title">
+                </div>
+                <br>
+                <div class="form-group d-flex gap-5">
+                    <label for="num_of_pages" class="w-210">Number of Pages:</label>
+                    <input type="form-text" class="form-control border-secondary" name="num_of_pages" id="num_of_pages" >
+                </div>
+                <br>
+                <input type="submit" class="btn btn-primary ml-176" value="Create">
+            </form>
+            <br>
+            <p><a href="/authors">Home</a></p>
+        </div>
+        <div>
+            <h1 class="mt-5 mb-5">All Books</h1>
+            <div class="elt border border-secondary">
+                {% for elt in all_books %}
+                <li><a href="/books/{{ elt.id }}">{{ elt.title }}({{ elt.num_of_pages }} pages)</a></li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
